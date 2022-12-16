@@ -18,7 +18,7 @@ const Join = () => {
       <div className="joinContainer">
         <img src={logo} alt="logo" />
         <h1>Chat App</h1>
-        <input type="text" id="joinInput" placeholder="Enter Your Name" value={userName} onChange={(e)=> setUserName(e.target.value)} />
+        <input  type="text" id="joinInput" placeholder="Enter Your Name" value={userName} onChange={(e)=> setUserName(e.target.value)} />
         <Link onClick={(e) => !userName ? e.preventDefault(): null} to="/chat"><button className="joinBtn" onClick={joinHandler}>Log In</button></Link>
       </div>
     </div>
