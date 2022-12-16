@@ -50,7 +50,8 @@ const Chat = () => {
       console.log(data.user, data.message);
     });
     return () => {
-      socket.disconnect();
+      socket.emit("disconnect");
+      socket.off();
     };
   }, []);
 
@@ -70,7 +71,9 @@ const Chat = () => {
       <div className="chatContainer">
         <div className="header">
           <h3>Chat App</h3>
-          <a href="/"><span className="material-symbols-rounded">close</span></a>
+          <a href="/">
+            <span className="material-symbols-rounded">close</span>
+          </a>
         </div>
         <ReactScrollToBottom className="chatBox">
           {messages.map((item, i) => (
@@ -82,7 +85,11 @@ const Chat = () => {
           ))}
         </ReactScrollToBottom>
         <div className="inputBox">
-          <input onKeyPress={(e) => e.key === 'Enter' ? send() : null} type="text" id="chatInput" />
+          <input
+            onKeyPress={(e) => (e.key === "Enter" ? send() : null)}
+            type="text"
+            id="chatInput"
+          />
           <button className="sendBtn" onClick={send}>
             <img src={sendlogo} alt="send" />
           </button>
