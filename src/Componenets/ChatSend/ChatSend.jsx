@@ -20,7 +20,7 @@ export default function ChatSend({ handleSendMsg }) {
     setMsg("");
   };
   return (
-    <Div>
+    <Div style={{height: '55px'}}>
       <div className="chat__conversation-panel">
         <div className="chat__conversation-panel__container">
           <button className="chat__conversation-panel__button panel-item btn-icon add-file-button">
