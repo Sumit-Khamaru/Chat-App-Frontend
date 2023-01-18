@@ -8,7 +8,7 @@ import ProfilePage from "./Pages/ProfilePage";
 
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <Join />,
