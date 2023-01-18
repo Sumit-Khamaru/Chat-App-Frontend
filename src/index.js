@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { RouterProvider } from "react-router-dom";
+import { RouterProvider, HashRouter } from "react-router-dom";
 import router from "./router.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <HashRouter>
     <RouterProvider router={router} />
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

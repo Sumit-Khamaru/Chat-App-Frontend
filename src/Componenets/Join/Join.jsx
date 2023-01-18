@@ -88,11 +88,12 @@ const Join = () => {
     e.preventDefault();
     if (handleValidationForLogin()) {
       const { name, password } = formData;
-      const { data } = await axios.post(
-        loginRoute,
-        { name, password }
-      );
+      const { data } = await axios.post( loginRoute, { name, password });
+      
       if (data.status === false) {
+        toast.error(data.msg, toastOptions);
+      }
+      if(data.status === 400) {
         toast.error(data.msg, toastOptions);
       }
 
@@ -110,7 +111,7 @@ const Join = () => {
       return false;
     } else if (password.length < 8 || password === "") {
       toast.error(
-        "Password should be equal or greater than 8 characters",
+        "Please Enter  Password to continue",
         toastOptions
       );
       return false;
