@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, createHashRouter } from "react-router-dom";
 import Chat from "./Componenets/Chat/Chat";
 import Join from "./Componenets/Join/Join";
 import ErrorPage from "./ErrorPage";
@@ -7,7 +7,8 @@ import ProfilePage from "./Pages/ProfilePage";
 
 
 
-const router = createBrowserRouter([
+
+const router = createHashRouter([
     {
         path: "/",
         element: <Join />,
